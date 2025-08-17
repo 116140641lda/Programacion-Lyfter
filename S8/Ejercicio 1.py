@@ -14,7 +14,7 @@ def request_info (information, headers):
         append_dictionary(information, 'gender', gender)
         append_dictionary(information, 'designer' , designer )
         append_dictionary(information, 'clasification' , clasification)
-        write_file('GAMES2.CSV',information, headers)
+        write_file('games.csv',information, headers)
           
 
 def write_file (path, information, headers):

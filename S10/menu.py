@@ -3,7 +3,8 @@ import data
 
 
 
-def menu ():
+def menu (total_info):
+    total_info = []
     while True:
         print('1. Ingresar nuevo estudiante')
         print('2. Ver estudiantes')
@@ -17,22 +18,22 @@ def menu ():
         option = input('\nElige una de las opciones\n >')
 
         if option == '1' :
-            actions.Info_estudiantes()
+            actions.Info_estudiantes(total_info)
             
         elif option == '2' :
-            actions.show_students()
+            actions.show_students(total_info)
             
             
         elif option == '3' :
-            actions.show_3_top()
+            actions.show_3_top(total_info)
     
 
         elif option == '4' :
-            result = actions.show_general_prom()
+            result = actions.show_general_prom(total_info)
             print(result)
         
         elif option == '5' :
-            data.export_csv()
+            data.export_csv(total_info)
 
 
         elif option == '6' :

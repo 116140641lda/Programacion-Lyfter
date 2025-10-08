@@ -74,50 +74,60 @@ def Info_estudiantes (total_info):
                         break  
                 except ValueError:
                     print("Debe ingresar un número válido.")
-
-            name = input("Ingrese el nombre del estudiante\n")
-            section = input("Ingrese su seccion\n")
                 
 
-            while True:
-                try:
 
-                    
-                    spanish = int(input ("Ingrese su nota de español\n"))
-                    while valid_note(spanish) == False :
-                            spanish = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+            name = input("Ingrese el nombre del estudiante\n")
 
-                    english = int(input("Ingrese su nota de inglés\n"))
-                    while valid_note(english) == False :
-                            english = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
-                        
 
-                    social = int(input("Ingrese su nota de Sociales\n"))
-                    while valid_note(social) == False :
-                        social = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
-                        
-                    science = int(input("Ingrese su nota de Ciencias\n"))
-                    while valid_note(science) == False :
-                        science = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
-                    
-                    prom_total = int(calc_prom(spanish, english, social, science))
+            section = input("Ingrese su seccion\n")
 
-                    info_students = {
-                            "name": name,
-                            "section": section,
-                            "spanish": spanish,
-                            "english": english,
-                            "social": social,
-                            "science": science,
-                            "prom_total": prom_total
+            try:
+                spanish = int(input ("Ingrese su nota de español\n"))
+                while valid_note(spanish) == False :
+                    spanish = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
 
-                    }
-                    total_info = add_list(total_info,info_students)
-                    return total_info
+                english = int(input("Ingrese su nota de inglés\n"))
+                while valid_note(english) == False :
+                    english = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+                
 
-                except ValueError:
-                    print("Ingrese una nota válida")
-                    print("Ingrese nuevamente las notas")
-                    continue
+                social = int(input("Ingrese su nota de Sociales\n"))
+                while valid_note(social) == False :
+                    social = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+                
+                science = int(input("Ingrese su nota de Ciencias\n"))
+                while valid_note(science) == False :
+                    science = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+                
+                prom_total = int(calc_prom(spanish, english, social, science))
 
-                    
+                info_students = {
+                    "name": name,
+                    "section": section,
+                    "spanish": spanish,
+                    "english": english,
+                    "social": social,
+                    "science": science,
+                    "prom_total": prom_total
+
+            }
+                total_info = add_list(total_info,info_students)
+                return total_info
+
+            except ValueError:
+                print("Ingrese una nota válida")
+                print("Ingrese nuevamente las notas")
+                
+            return
+                
+           
+        
+
+        
+            # add_list(total_info,info_students)
+            # print(info_students)
+            # print (total_info)
+      
+
+            

@@ -1,14 +1,10 @@
 import actions
 import data
-import os
 
 
 
-def menu (total_info,DOC,BASE_DIR):
+def menu (total_info):
     total_info = []
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    DOC = os.path.join(BASE_DIR, 'students.csv')
-    
     while True:
         print('1. Ingresar nuevo estudiante')
         print('2. Ver estudiantes')
@@ -41,7 +37,7 @@ def menu (total_info,DOC,BASE_DIR):
 
 
         elif option == '6' :
-            data.import_file(DOC,BASE_DIR)
+            data.import_file()
 
         elif option == '7' :
             print("Muchas gracias")

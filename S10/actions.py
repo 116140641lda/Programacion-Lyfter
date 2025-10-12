@@ -15,9 +15,9 @@ def valid_note(note):
             print('ingrese un numero válido')
             
             
-def valid_code (code):
+def valid_code (code,total_info):
     while True:
-        if len(str(code)) <= 4:
+        if len(str(code)) <= 4 and all(est["code"] != code for est in total_info):
             return True
         return False
 
@@ -61,63 +61,67 @@ def show_general_prom (total_info):
 
 def Info_estudiantes (total_info):
         # total_info = []
-        quantity = int(input("Ingrese la cantidad de estudiantes\n"))
-        print(quantity)
-        for i in range (quantity):
-            print(f"\nIngrese el estudiante # {i+1}")
-            while True:
-                try:
-                    code = int(input('Ingrese el código de 4 dígitos del estudiante\n'))
-                    if not valid_code(code):
-                        print("El código debe ser de 4 dígitos o menos.")
-                    else:
-                        break  
-                except ValueError:
-                    print("Debe ingresar un número válido.")
+    while True:
+        try:
+            quantity = int(input("Ingrese la cantidad de estudiantes\n"))
+            print(quantity)
+            for i in range (quantity):
+                print(f"\nIngrese el estudiante # {i+1}")
+                while True:
+                    try:
+                        code = int(input('Ingrese el código de 4 dígitos del estudiante\n'))
+                        if not valid_code(code,total_info):
+                            print("El código debe ser de 4 dígitos o menos o ya se encuentra en la lista")
+                        else:
+                            break  
+                    except ValueError:
+                        print("Debe ingresar un número válido.")
 
-            name = input("Ingrese el nombre del estudiante\n")
-            section = input("Ingrese su seccion\n")
-                
-
-            while True:
-                try:
-
+                name = input("Ingrese el nombre del estudiante\n")
+                section = input("Ingrese su seccion\n")
                     
-                    spanish = int(input ("Ingrese su nota de español\n"))
-                    while valid_note(spanish) == False :
-                            spanish = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
 
-                    english = int(input("Ingrese su nota de inglés\n"))
-                    while valid_note(english) == False :
-                            english = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+                while True:
+                    try:
                         
+                        spanish = int(input ("Ingrese su nota de español\n"))
+                        while valid_note(spanish) == False :
+                                spanish = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
 
-                    social = int(input("Ingrese su nota de Sociales\n"))
-                    while valid_note(social) == False :
-                        social = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+                        english = int(input("Ingrese su nota de inglés\n"))
+                        while valid_note(english) == False :
+                                english = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+                            
+
+                        social = int(input("Ingrese su nota de Sociales\n"))
+                        while valid_note(social) == False :
+                            social = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+                            
+                        science = int(input("Ingrese su nota de Ciencias\n"))
+                        while valid_note(science) == False :
+                            science = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
                         
-                    science = int(input("Ingrese su nota de Ciencias\n"))
-                    while valid_note(science) == False :
-                        science = int(input('Ingrese una nota correcta, entre 0 y 100\n'))
+                        prom_total = int(calc_prom(spanish, english, social, science))
+
+                        info_students = {
+                                "code": code,
+                                "name": name,
+                                "section": section,
+                                "spanish": spanish,
+                                "english": english,
+                                "social": social,
+                                "science": science,
+                                "prom_total": prom_total
+
+                        }
+                        total_info = add_list(total_info,info_students)
+                        break
+                    except ValueError:
+                        print("Ingrese una nota válida")
+                        print("Ingrese nuevamente las notas")
+            return total_info
+        except ValueError:
+            print("La información ingresada es incorrecta")
                     
-                    prom_total = int(calc_prom(spanish, english, social, science))
-
-                    info_students = {
-                            "name": name,
-                            "section": section,
-                            "spanish": spanish,
-                            "english": english,
-                            "social": social,
-                            "science": science,
-                            "prom_total": prom_total
-
-                    }
-                    total_info = add_list(total_info,info_students)
-                    return total_info
-
-                except ValueError:
-                    print("Ingrese una nota válida")
-                    print("Ingrese nuevamente las notas")
-                    continue
 
                     

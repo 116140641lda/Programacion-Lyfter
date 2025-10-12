@@ -13,7 +13,7 @@ def export_csv(total_info):
         return
     print(total_info)
     with open(DOC, mode='w', newline='', encoding='utf-8') as file:
-        campos = ['name', 'section', 'spanish', 'english', 'social', 'science', 'prom_total']
+        campos = ["code",'name', 'section', 'spanish', 'english', 'social', 'science', 'prom_total']
         writer = csv.DictWriter(file, fieldnames=campos)
         writer.writeheader()
         writer.writerows(total_info)

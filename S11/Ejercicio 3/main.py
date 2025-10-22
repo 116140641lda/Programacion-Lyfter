@@ -1,6 +1,10 @@
-import menu
-import actions
+from menu import Menu
+
+def main(BASE_DIR,DOC,code,info_students):
+    print("Bienvenido al sistema de ingreso de estudiantes")
+    app = Menu(BASE_DIR,DOC,code,info_students)
+    app.menu(code)
 
 if __name__ == "__main__":
-    print ('Bienvenido al sistema de ingreso de estudiantes')
-    menu.menu(0)
+    main(0,"","","")
+

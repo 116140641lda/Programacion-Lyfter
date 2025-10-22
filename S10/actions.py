@@ -1,4 +1,4 @@
-import menu
+# import menu
 
 
 def add_list (total_info, info_students):

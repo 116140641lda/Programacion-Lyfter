@@ -21,6 +21,7 @@ def export_csv(total_info):
 
 
 def import_file (DOC,BASE_DIR):
+    total_info = []
     if not os.path.exists(DOC):
         print('No existe archivo a importar')
         return
@@ -34,6 +35,7 @@ def import_file (DOC,BASE_DIR):
             total_info.clear()
             for row in reader:
                 student = {
+                    "code" : row["code"],
                     'name': row["name"],
                     "section": row["section"],
                     "spanish": float(row["spanish"]),

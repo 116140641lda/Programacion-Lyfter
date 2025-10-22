@@ -5,7 +5,6 @@ import os
 
 
 def menu (total_info,DOC,BASE_DIR):
-    total_info = []
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     DOC = os.path.join(BASE_DIR, 'students.csv')
     

@@ -47,4 +47,4 @@ class Menu:
                 print("Muchas gracias")
                 break
             else:
-                print('elija una opcion correcta') 
+                print('elija una opcion correcta.') 

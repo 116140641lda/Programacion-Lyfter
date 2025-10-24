@@ -7,7 +7,7 @@ import actions
 def export_csv(total_info):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     DOC = os.path.join(BASE_DIR, 'students.csv')
-    print("Iniciando exportación...")
+    print("Iniciando exportación....")
     if not total_info:
         print("Archivo vacio")
         return

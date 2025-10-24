@@ -20,32 +20,31 @@ def export_csv(total_info):
         print('Proceso exportación finalizado')
 
 
-def import_file (DOC,BASE_DIR):
+def import_file(DOC,BASE_DIR):
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DOC = os.path.join(BASE_DIR, 'students.csv')
     total_info = []
+
     if not os.path.exists(DOC):
-        print('No existe archivo a importar')
-        return
-    else:
-        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        DOC = os.path.join(BASE_DIR, 'students.csv')
-        total_info = []
+        print("No existe archivo a importar.")
+        return total_info
 
-        with open(DOC, mode='r', encoding='utf-8',) as file:
-            reader = csv.DictReader(file)
-            total_info.clear()
-            for row in reader:
-                student = {
-                    "code" : row["code"],
-                    'name': row["name"],
-                    "section": row["section"],
-                    "spanish": float(row["spanish"]),
-                    "english": float(row["english"]),
-                    "social": float(row["social"]),
-                    "science": float(row["science"]),
-                    "prom_total": float(row["prom_total"])
+    print("Iniciando importación...")
 
-                }
-                total_info = actions.add_list(total_info, student)
-            
-            print ("Proceso importación finalizado")
-            return total_info
+    with open(DOC, mode='r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            student = {
+                "code": row["code"],
+                "name": row["name"],
+                "section": row["section"],
+                "spanish": float(row["spanish"]),
+                "english": float(row["english"]),
+                "social": float(row["social"]),
+                "science": float(row["science"]),
+                "prom_total": float(row["prom_total"])
+            }
+            total_info = actions.add_list(total_info, student)
+
+    print("Proceso de importación finalizado correctamente.")
+    return total_info

@@ -4,7 +4,7 @@ import os
 
 
 
-def menu (total_info,DOC,BASE_DIR):
+def menu (total_info,BASE_DIR,DOC):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     DOC = os.path.join(BASE_DIR, 'students.csv')
     
@@ -40,7 +40,7 @@ def menu (total_info,DOC,BASE_DIR):
 
 
         elif option == '6' :
-            data.import_file(DOC,BASE_DIR)
+            total_info = data.import_file(DOC,BASE_DIR)
 
         elif option == '7' :
             print("Muchas gracias")

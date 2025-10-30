@@ -40,7 +40,13 @@ def menu (total_info,DOC,BASE_DIR):
 
 
         elif option == '6' :
-            data.import_file(DOC,BASE_DIR)
+            imported_data = data.import_file(DOC, BASE_DIR)
+            if imported_data:  
+                total_info = imported_data
+            else :
+                print("lista vacia")
+            # data.import_file(DOC,BASE_DIR)
+    
 
         elif option == '7' :
             print("Muchas gracias")

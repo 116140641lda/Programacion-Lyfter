@@ -22,15 +22,17 @@ def export_csv(total_info):
 
 def import_file (DOC,BASE_DIR):
     total_info = []
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DOC = os.path.join(BASE_DIR, 'students.csv')
     if not os.path.exists(DOC):
         print('No existe archivo a importar')
-        return
-    else:
-        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        DOC = os.path.join(BASE_DIR, 'students.csv')
-        total_info = []
+        return 
+    # else:
+    #     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    #     DOC = os.path.join(BASE_DIR, 'students.csv')
+    #     total_info = []
 
-        with open(DOC, mode='r', encoding='utf-8',) as file:
+    with open(DOC, mode='r', encoding='utf-8',) as file:
             reader = csv.DictReader(file)
             total_info.clear()
             for row in reader:
@@ -47,5 +49,5 @@ def import_file (DOC,BASE_DIR):
                 }
                 total_info = actions.add_list(total_info, student)
             
-            print ("Proceso importación finalizado")
-            return total_info
+                print ("Proceso importación finalizado")
+                return total_info

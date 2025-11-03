@@ -49,5 +49,5 @@ def import_file (DOC,BASE_DIR):
                 }
                 total_info = actions.add_list(total_info, student)
             
-                print ("Proceso importación finalizado")
-                return total_info
+            print ("Proceso importación finalizado")
+            return total_info

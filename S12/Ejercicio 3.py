@@ -16,6 +16,7 @@ class Gohan(Goku):
 
 gohan = Gohan()
 
+
 print(gohan.little_power)
 print(gohan.power)
 gohan.get_power()

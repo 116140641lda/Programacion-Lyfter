@@ -8,21 +8,30 @@ class Bus:
         self.max_passengers = max_passengers
         self.passengers = []
 
-    def add_passengers (self, Person):
-        if self.max_passengers < 12 :
-            self.passengers.append(Person)
-            print ( f"Pasajero {Person.name} ya ingreso al autobus")
+    def add_passengers (self, person):
+
+        if not isinstance(person, Person):
+            print("Solo se pueden subir objetos de tipo Person.")
+            return
+        
+        if person in self.passengers:
+            print(f"{person.name} ya está en el bus.")
+            return
+        
+        if self.max_passengers > len(self.passengers) :
+            self.passengers.append(person)
+            print ( f"Pasajero {person.name} ya ingreso al autobus")
         else:
             print("El bus esta a su capacidad màxima, debe esperar el siguiente bus")
 
     
-    def remove_passenger (self, Person):
-        if Person in self.passengers:
-            self.passengers.remove(Person)
-            print (f"el pasajero {Person.name} se ha retirado del autobus.")
+    def remove_passenger (self, person):
+        if person in self.passengers:
+            self.passengers.remove(person)
+            print (f"el pasajero {person.name} se ha retirado del autobus.")
         
         else:
-            print( f"El pasajero {Person.name} no se encuentra en el autobus")
+            print( f"El pasajero {person.name} no se encuentra en el autobus")
 
 
 if __name__ == "__main__":
@@ -34,6 +43,7 @@ if __name__ == "__main__":
     third_person = Person("Jose")
     fourth_person = Person("Eva")
     fifth_person = Person("Felipe")
+    sixth_person = Person("Fabian")
 
 
     bus_1.add_passengers(first_person)
@@ -41,6 +51,9 @@ if __name__ == "__main__":
     bus_1.add_passengers(third_person)
     bus_1.add_passengers(fourth_person)
     bus_1.add_passengers(fifth_person)
+    bus_1.add_passengers(sixth_person)
 
     bus_1.remove_passenger(second_person)
     bus_1.remove_passenger(fifth_person)
+
+    bus_1.add_passengers(sixth_person)

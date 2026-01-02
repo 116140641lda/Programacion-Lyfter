@@ -8,7 +8,7 @@ def bubble_sort (sort_list):
 
     
 
-Main_list = [1,4,8,9]
+Main_list = [1,-2,-4,15,10]
 bubble_sort(Main_list)
 
 print(Main_list)

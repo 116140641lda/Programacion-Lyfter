@@ -6,9 +6,8 @@ def bubble_sort (sort_list):
             
             print(f"Esta es la iteraciòn # {i}, el elemento actual es el: {actual_element} y el siguiente elemento de la lista es el {next_element}")
 
-    
+    print(sort_list)
 
 Main_list = [1,-2,-4,15,10]
 bubble_sort(Main_list)
 
-print(Main_list)

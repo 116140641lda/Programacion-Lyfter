@@ -9,7 +9,7 @@ class FinancialTest(unittest.TestCase):
         self.manage = FinancialManager()
 
     def test_add_category(self):
-        self.manager.add_category("Food")
+        self.manage.add_category("Food")
         self.assertEqual(len(self.manager.categories), 1)
 
     def test_save_categorie_check_save(self):

@@ -40,15 +40,18 @@ while True:
             elif not amount_validation(w["-AMOUNT-"]):
                 sg.popup_error("Invalid amount")
             else:
-                print(values)
-                manage.add_movements(
-                    w["-TITLE-"],
-                    float(w["-AMOUNT-"]),
-                    w["-CATEGORY-"],
-                    type_
-                )
-                save_movements(manage.movements)
+                try:
+                    manage.add_movements(
+                        w["-TITLE-"],
+                        float(w["-AMOUNT-"]),
+                        w["-CATEGORY-"],
+                        type_
+                    )
+                    save_movements(manage.movements)
 
+                except ValueError as e:
+                    sg.popup_error(str(e))
+            
         w_mov.close()
         window["-TABLE-"].update(manage.get_table())
 

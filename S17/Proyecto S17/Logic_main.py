@@ -33,12 +33,29 @@ class FinancialManager:
         self.movements = []
 
     def add_category(self, name):
+
+        if not name or name.strip() == "":
+            raise ValueError("El nombre de categorìa esta vacío")
+
         if name in [c.name for c in self.categories]:
             raise ValueError("La categoría ya existe")
+
         category = Category(name)
         self.categories.append(category)
 
     def add_movements(self, title, amount, category, type_):
+
+        if not title or title.strip() == "":
+            raise ValueError("El título no puede estar vacío")
+
+        if amount <= 0:
+            raise ValueError("El monto debe ser mayor que 0")
+
+        if not category:
+            raise ValueError("Debe seleccionar una categoría")
+
+        if type_ not in ["Expense", "Income"]:
+            raise ValueError("Tipo de movimiento inválido")
 
         if not self.categories:
             raise ValueError("No hay categorías disponibles")

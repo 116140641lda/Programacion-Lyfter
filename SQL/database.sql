@@ -36,8 +36,6 @@ CREATE TABLE Invoices (
     method_id INTEGER NOT NULL,
     purchase_date TEXT NOT NULL,
     buyer_email TEXT NOT NULL,
-    buyer_number TEXT NOT NULL,
-    employee_id_number TEXT NOT NULL,
     total_amount REAL NOT NULL CHECK (total_amount >= 0),
 
     FOREIGN KEY (user_id)
@@ -227,3 +225,9 @@ ORDER BY total_amount DESC;
 SELECT *
 FROM Invoices
 WHERE invoice_number = 1;
+
+ALTER TABLE Invoices
+	ADD (
+        buyer_number,
+        employee_id_number
+)

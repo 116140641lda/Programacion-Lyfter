@@ -1,0 +1,16 @@
+
+11. Cree un algoritmo que le pida un numero al usuario, y realice una suma de cada numero del 1 hasta ese número ingresado. Luego muestre el resultado de la suma.
+12. Inicio
+13. Definir numero
+14. Definir numero_actual
+15. Definir Contador
+16. Mostrar “ digite un número “
+17. Pedir numero
+18. Numero_actual = 0
+19. Contador = 1
+20. Mientras que ( Numero_actual ≤ numero ) hacer:
+    1. Numero_actual = Numero_actual + contador
+    2. contador = contador + 1
+21. FinMientras
+22. Mostrar Numero_actual
+23. Fin

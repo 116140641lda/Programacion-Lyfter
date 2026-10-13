@@ -1,0 +1,11 @@
+name,gender,designer,clasification
+FIFA,deportes,EA,AB
+Zelda,Aventura,Entertainment,AA
+"& C:/Users/16102060/AppData/Local/Programs/Python/Python313/python.exe ""c:/Users/16102060/OneDrive - Banco Nacional de Costa Rica/DOCUMENTACION FUNCIONAL/FABIAN/LYFTER/S8/CSV.py""",Fifa,EA,AB
+FIfa,deportes,EA,AA
+Fifa,deportes,EA,AA
+Zelda,aventura,Entertain,AB
+FIFA,deportes,EA,AA
+Zelda,Aventura,Entertainment,AB
+FIFA,DEPORTES,EA,AA
+FIFa,deportes,EA,AA

@@ -1,0 +1,85 @@
+[
+  {
+    "name": {
+      "english": "Pikachu"
+    },
+    "type": [
+      "Electric"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 55,
+      "Defense": 40,
+      "Sp. Attack": 50,
+      "Sp. Defense": 50,
+      "Speed": 90
+    }
+  },
+  {
+    "name": {
+      "english": "Charmander"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 39,
+      "Attack": 52,
+      "Defense": 43,
+      "Sp. Attack": 60,
+      "Sp. Defense": 50,
+      "Speed": 65
+    }
+  },
+  {
+    "name": {
+      "english": "Squirtle"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 44,
+      "Attack": 48,
+      "Defense": 65,
+      "Sp. Attack": 50,
+      "Sp. Defense": 64,
+      "Speed": 43
+    }
+  },
+  {
+    "nombre": "Pikachu",
+    "tipo": [
+      "Electrico"
+    ],
+    "nivel": 10,
+    "habilidades": [
+      "Impactrueno",
+      "Mordisco"
+    ]
+  },
+  {
+    "nombre": "Squirtle",
+    "type": "Agua",
+    "base": {
+      "hp": "20",
+      "attack": "20",
+      "defense": "30",
+      "sp_attack": "20",
+      "sp_defense": "20",
+      "speed": "50"
+    }
+  },
+  {
+    "nombre": "balbasaur",
+    "type": "flora",
+    "base": {
+      "hp": "30",
+      "attack": "20",
+      "defense": "50",
+      "sp_attack": "30",
+      "sp_defense": "25",
+      "speed": "10"
+    }
+  }
+]

@@ -1,0 +1,28 @@
+**Ejercicios Extra**
+
+1. Cree un algoritmo que le pida 2 números al usuario, los guarde en dos variables distintas (primero y segundo) y los ordene de menor a mayor en dichas variables.
+    1. Ejemplos:
+        1. A: 56, B: 32 → A: 32, B: 56
+        2. A: 24, B: 76 → A: 24, B: 76
+        3. A: 45, B: 12 → A: 12, B: 45
+2. Inicio
+3. Definir numero1
+4. Definir numero2
+5. Definir auxiliar
+6. Mostrar “ Digite el primer numero “
+7. Pedir numero1
+8. Mostrar “ Digite el segundo numero “
+9. Pedir numero2
+10. Si ( numero1 > numero2 ) entonces :
+    1. Auxiliar = Numero 1
+    2. Numero1 = numero2
+    3. Numero2 = auxiliar
+    4. Mostrar “ los números son “
+    5. Mostrar numero1 , numero2
+11. Si no,
+    1. Numero1 = numero1
+    2. Numero2 = numero 2
+    3. Mostrar “ los números son “
+    4. Mostrar numero1, numero2
+12. FinSi
+13. Fin

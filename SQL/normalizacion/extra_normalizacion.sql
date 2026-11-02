@@ -2,41 +2,42 @@
 PRAGMA foreign_keys = ON;
 
 
--- EJERCICIO 1: NORMALIZACION DE EMPLEADOS Y PROYECTOS
 
+-- =====================================================
+-- EJERCICIO 1: NORMALIZACION DE EMPLEADOS Y PROYECTOS
+-- =====================================================
 
 -- 1FN:
--- La tabla original ya cumple 1FN porque cada celda contiene un solo valor.
-
-
-
+-- La tabla original ya cumple 1FN porque cada celda
+-- contiene un solo valor.
 
 -- 2FN:
 -- Separamos Employees y Projects porque sus atributos
 -- dependen de una sola parte de la clave compuesta.
 
-
-
 -- 3FN:
 -- Separamos Departments porque DepartmentPhone depende
 -- del departamento y no directamente del empleado.
 
+-- Eliminamos las tablas en orden para respetar
+-- las relaciones de claves foraneas.
 DROP TABLE IF EXISTS EmployeeProjects;
 DROP TABLE IF EXISTS Employees;
 DROP TABLE IF EXISTS Projects;
 DROP TABLE IF EXISTS Departments;
 
 CREATE TABLE Departments (
-    Department TEXT PRIMARY KEY,
+    DepartmentID INTEGER PRIMARY KEY AUTOINCREMENT,
+    DepartmentName TEXT NOT NULL UNIQUE,
     DepartmentPhone TEXT NOT NULL
 );
 
 CREATE TABLE Employees (
     EmployeeID INTEGER PRIMARY KEY,
     EmployeeName TEXT NOT NULL,
-    Department TEXT NOT NULL,
-    FOREIGN KEY (Department)
-        REFERENCES Departments(Department)
+    DepartmentID INTEGER NOT NULL,
+    FOREIGN KEY (DepartmentID)
+        REFERENCES Departments(DepartmentID)
 );
 
 CREATE TABLE Projects (
@@ -53,13 +54,13 @@ CREATE TABLE EmployeeProjects (
     FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
 );
 
-INSERT INTO Departments (Department, DepartmentPhone) VALUES
+INSERT INTO Departments (DepartmentName, DepartmentPhone) VALUES
 ('IT', '2222-2222'),
 ('Marketing', '1111-1111');
 
-INSERT INTO Employees (EmployeeID, EmployeeName, Department) VALUES
-(201, 'Ana Rivera', 'IT'),
-(202, 'Luis Mendez', 'Marketing');
+INSERT INTO Employees (EmployeeID, EmployeeName, DepartmentID) VALUES
+(201, 'Ana Rivera', 1),
+(202, 'Luis Mendez', 2);
 
 INSERT INTO Projects (ProjectID, ProjectName, ProjectBudget) VALUES
 ('P001', 'Web App', 50000),

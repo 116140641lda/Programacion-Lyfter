@@ -1,0 +1,6 @@
+suma = (1+1)
+print (suma)
+suma = (90+430)
+print (suma)
+suma = (4*5)
+print (suma)

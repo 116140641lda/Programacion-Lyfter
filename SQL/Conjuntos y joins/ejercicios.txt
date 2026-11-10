@@ -1,0 +1,211 @@
+
+# Ejercicios de Teoría de Conjuntos
+
+## 1. Conjuntos proporcionados
+
+Se utilizarán los siguientes conjuntos:
+
+- All = {1,2,3,4,5,6,7,8,9,10}
+- Even = {2,4,6,8,10}
+- Odd = {1,3,5,7,9}
+
+All representa el conjunto universal.
+
+## 2. Operaciones
+
+### 2.1 Unión: Even U Odd
+
+La unión reúne todos los elementos de ambos conjuntos sin repetir.
+
+Resultado:
+
+{1,2,3,4,5,6,7,8,9,10}
+
+### 2.2 Intersección: Even ∩ Odd
+
+La intersección obtiene los elementos que pertenecen a ambos conjuntos.
+
+Como ningún número puede ser par e impar al mismo tiempo:
+
+Resultado: {}
+
+### 2.3 Diferencia: All - Odd
+
+Se obtienen los elementos de All que no pertenecen a Odd.
+
+Resultado:
+
+{2,4,6,8,10}
+
+### 2.4 Complemento: C(Even)
+
+El complemento contiene los elementos del conjunto universal que no pertenecen a Even.
+
+Resultado:
+
+{1,3,5,7,9}
+
+### 2.5 Complemento: C(Odd-All)
+
+Primero realizamos la diferencia Odd - All.
+
+Como todos los elementos de Odd pertenecen a All, el resultado es el conjunto vacío.
+
+Odd - All = {}
+
+El complemento del conjunto vacío es el conjunto universal.
+
+Resultado:
+
+{1,2,3,4,5,6,7,8,9,10}
+
+
+INVESTIGACION SOBRE SELECT, ORDER BY, LIMIT, GROUP BY Y JOIN
+
+============================================================
+1. INTRODUCCION
+============================================================
+
+SELECT es una instruccion de SQL que permite consultar y
+obtener informacion almacenada en una base de datos.
+
+Entre sus funcionalidades se encuentran ORDER BY, LIMIT,
+GROUP BY y los diferentes tipos de JOIN, que permiten
+organizar, agrupar y relacionar informacion.
+
+============================================================
+2. FUNCIONALIDADES DE SELECT
+============================================================
+
+FUNCIONALIDAD: SELECT
+
+DESCRIPCION:
+Permite consultar informacion almacenada en una o varias
+tablas de una base de datos.
+
+FUNCIONALIDAD: ORDER BY
+
+DESCRIPCION:
+Permite ordenar los resultados de una consulta utilizando
+una o varias columnas.
+
+FUNCIONAMIENTO:
+- ASC: orden ascendente.
+- DESC: orden descendente.
+
+EJEMPLO DE APLICACION:
+Mostrar una lista de libros ordenada alfabeticamente
+por su nombre.
+
+Ejercicios de JOIN
+
+
+1.
+FUNCIONALIDAD: LIMIT
+
+DESCRIPCION:
+Permite establecer una cantidad maxima de registros que
+se desean obtener en los resultados de una consulta.
+
+FUNCIONAMIENTO:
+Se utiliza para limitar la cantidad de filas devueltas.
+Tambien puede combinarse con OFFSET para saltar registros.
+
+EJEMPLO DE APLICACION:
+Mostrar solamente los primeros tres libros registrados
+en una biblioteca.
+
+------------------------------------------------------------
+
+FUNCIONALIDAD: GROUP BY
+
+DESCRIPCION:
+Permite agrupar registros que contienen valores iguales
+en una o varias columnas.
+
+FUNCIONAMIENTO:
+Se utiliza principalmente junto con funciones de
+agrupacion como COUNT, SUM y AVG.
+
+EJEMPLO DE APLICACION:
+Agrupar los alquileres de libros segun su estado y
+contar cuantos alquileres existen en cada categoria.
+
+============================================================
+3. TIPOS DE JOIN
+============================================================
+
+JOIN permite combinar informacion de dos o mas tablas
+relacionadas mediante una condicion.
+
+------------------------------------------------------------
+
+TIPO: INNER JOIN
+
+DESCRIPCION:
+Combina registros de dos tablas cuando existe una
+coincidencia entre ellas.
+
+FUNCIONAMIENTO:
+Devuelve unicamente los registros que tienen coincidencias
+en ambas tablas.
+
+EJEMPLO DE APLICACION:
+Mostrar los libros que tienen un autor registrado.
+
+------------------------------------------------------------
+
+TIPO: LEFT JOIN
+
+DESCRIPCION:
+Permite obtener todos los registros de la tabla izquierda
+y los registros coincidentes de la tabla derecha.
+
+FUNCIONAMIENTO:
+Si no existe una coincidencia, los valores de la tabla
+derecha aparecen como NULL.
+
+EJEMPLO DE APLICACION:
+Mostrar todos los libros de una biblioteca, incluyendo
+aquellos que no tienen un autor registrado.
+
+------------------------------------------------------------
+
+TIPO: RIGHT JOIN
+
+DESCRIPCION:
+Permite obtener todos los registros de la tabla derecha
+y los registros coincidentes de la tabla izquierda.
+
+FUNCIONAMIENTO:
+Si no existe una coincidencia, los valores de la tabla
+izquierda aparecen como NULL.
+
+EJEMPLO DE APLICACION:
+Mostrar todos los autores registrados, incluyendo aquellos
+que todavia no tienen libros asociados.
+
+============================================================
+4. TABLA COMPARATIVA
+============================================================
+
+FUNCIONALIDAD     OBJETIVO PRINCIPAL
+
+ORDER BY          Ordenar los resultados de una consulta.
+
+LIMIT             Limitar la cantidad de registros obtenidos.
+
+GROUP BY          Agrupar registros para realizar calculos.
+
+INNER JOIN        Obtener registros coincidentes entre tablas.
+
+LEFT JOIN         Conservar todos los registros de la tabla
+                  izquierda, aunque no tengan coincidencias.
+
+RIGHT JOIN        Conservar todos los registros de la tabla
+                  derecha, aunque no tengan coincidencias.
+
+
+
+2. 
+

@@ -74,11 +74,11 @@ SELECT
 FROM Books
 LEFT JOIN Authors
     ON Books.Author = Authors.ID;
-1|Don Quijote|Miguel de Cervantes
-2|La Divina Comedia|Dante Alighieri
-3|Vagabond 1-3|Takehiko Inoue
-4|Dragon Ball 1|Akira Toriyama
-5|The Book of the 5 Rings|
+-- 1|Don Quijote|Miguel de Cervantes
+-- 2|La Divina Comedia|Dante Alighieri
+-- 3|Vagabond 1-3|Takehiko Inoue
+-- 4|Dragon Ball 1|Akira Toriyama
+-- 5|The Book of the 5 Rings|
 
 -- QUERY 2: Obtener todos los libros que no tienen autor
 
@@ -89,7 +89,7 @@ FROM Books
 LEFT JOIN Authors
     ON Books.Author = Authors.ID
 WHERE Authors.ID IS NULL;
-5|The Book of the 5 Rings
+-- 5|The Book of the 5 Rings
 
 
 -- QUERY 3: Obtener todos los autores que no tienen libros
@@ -101,7 +101,7 @@ FROM Authors
 LEFT JOIN Books
     ON Authors.ID = Books.Author
 WHERE Books.ID IS NULL;
-5|Walt Disney
+-- 5|Walt Disney
 
 
 -- QUERY 4: Obtener todos los libros que han sido rentados
@@ -112,9 +112,9 @@ SELECT DISTINCT
 FROM Books
 INNER JOIN Rents
     ON Books.ID = Rents.BookID;
-1|Don Quijote
-2|La Divina Comedia
-3|Vagabond 1-3
+-- 1|Don Quijote
+-- 2|La Divina Comedia
+-- 3|Vagabond 1-3
 
 
 -- QUERY 5: Obtener todos los libros que nunca han sido rentados
@@ -126,8 +126,8 @@ FROM Books
 LEFT JOIN Rents
     ON Books.ID = Rents.BookID
 WHERE Rents.ID IS NULL;
-4|Dragon Ball 1
-5|The Book of the 5 Rings
+-- 4|Dragon Ball 1
+-- 5|The Book of the 5 Rings
 
 
 -- QUERY 6: Obtener todos los clientes que nunca han rentado un libro
@@ -140,7 +140,7 @@ FROM Customers
 LEFT JOIN Rents
     ON Customers.ID = Rents.CustomerID
 WHERE Rents.ID IS NULL;
-3|Luke Skywalker|darth.son@email.com
+-- 3|Luke Skywalker|darth.son@email.com
 
 
 
@@ -155,4 +155,4 @@ FROM Books
 INNER JOIN Rents
     ON Books.ID = Rents.BookID
 WHERE Rents.State = 'Overdue';
-2|La Divina Comedia|Overdue
+-- 2|La Divina Comedia|Overdue
